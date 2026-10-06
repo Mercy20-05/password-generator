@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <header class="card-header">
+      <h1>Password Generator</h1>
+      <p>Create strong, secure passwords instantly</p>
+    </header>
+
+    <div class="display-container">
+      <input 
+        type="text" 
+        id="password-output" 
+        placeholder="Click 'Generate'" 
+        readonly 
+        aria-label="Generated Password"
+      />
+      <button id="copy-btn" title="Copy to clipboard" aria-label="Copy to clipboard">
+        <svg id="copy-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <span id="copy-feedback" class="copy-feedback">Copied to clipboard!</span>
+
+    <div class="settings">
+      <div class="setting-row">
+        <label for="length-slider">Password Length</label>
+        <div class="length-controls">
+          <input type="range" id="length-slider" min="4" max="32" value="14" />
+          <span id="length-val" class="length-badge">14</span>
+        </div>
+      </div>
+
+      <div class="options-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="uppercase" checked />
+          <span>Include Uppercase (A-Z)</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="lowercase" checked />
+          <span>Include Lowercase (a-z)</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="numbers" checked />
+          <span>Include Numbers (0-9)</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="symbols" checked />
+          <span>Include Symbols (!@#$%^&amp;*)</span>
+        </label>
+      </div>
+
+      <div id="error-message" class="error-message"></div>
+
+      <button id="generate-btn" class="btn-primary">Generate Password</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
